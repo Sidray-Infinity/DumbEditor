@@ -10,7 +10,7 @@ const BG_COLOR: [u8; 4] = [20, 22, 26, 255];
 const FG_COLOR: [u8; 4] = [232, 234, 239, 255];
 
 fn load_font() -> Font {
-    let font_path = "/System/Library/Fonts/Supplemental/Arial Unicode.ttf";
+    let font_path = "/Users/sidpanda/Library/Fonts/Source Code Pro for Powerline.otf";
     if let Ok(bytes) = std::fs::read(font_path) {
         if let Ok(font) = Font::from_bytes(bytes, FontSettings::default()) {
             return font;
@@ -29,7 +29,7 @@ impl Renderer {
     pub fn new() -> Self {
         Self { font: load_font(), ch_glyph_cache: HashMap::new() }
     }
-    
+
     /**
      * Draws the current state of the editor onto the pixel buffer.
      * Clears the buffer, draws the text, and handles cursor visibility.

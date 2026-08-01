@@ -27,7 +27,6 @@ impl Controller {
                 event_loop.exit();
             }
             WindowEvent::Resized(size) => {
-                println!("Window resized: {:?}", size);
                 if let Err(err) = pixels.resize_surface(size.width, size.height) {
                     eprintln!("Failed to resize pixel surface: {err}");
                     event_loop.exit();
